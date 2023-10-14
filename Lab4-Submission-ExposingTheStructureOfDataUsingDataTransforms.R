@@ -205,3 +205,14 @@ student_performance_dataset_box_cox_transform <- predict(model_of_the_transform,
 # AFTER
 summary(student_performance_dataset_box_cox_transform)
 
+# Yeo-Johnson Power Transform ----
+# BEFORE
+summary(student_performance_dataset)
+# Calculate the skewness of two columns
+sapply(student_performance_dataset[, 91:94],  skewness, type = 2)
+
+# AFTER
+summary(student_performance_dataset_yeo_johnson_transform)
+
+# Calculate the skewness after the Yeo-Johnson transform
+sapply(student_performance_dataset_yeo_johnson_transform[, 91:94],  skewness, type = 2)
