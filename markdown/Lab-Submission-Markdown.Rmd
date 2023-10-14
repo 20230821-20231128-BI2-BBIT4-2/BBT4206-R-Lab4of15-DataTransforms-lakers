@@ -135,7 +135,7 @@ library(readr)
 library(dplyr)
 student_performance_dataset <-
   readr::read_csv(
-    "StudentPerformanceDataset.csv", 
+    "../data/StudentPerformanceDataset.csv", 
     col_types =
       readr::cols(
         class_group =
@@ -271,7 +271,6 @@ student_performance_dataset <-
 
 ## Scale Data Transform
 
-select 10 features and select 100 random variables
 
 ```{r Scale Data Transform}
 # BEFORE
@@ -286,7 +285,7 @@ summary(student_perfomance_dataset_scale_transform)
 
 ```
 
-Next, we confirm Center Data Transform
+Next, Center Data Transform
 
 ```{r Center Data Transform}
 # BEFORE
@@ -304,7 +303,6 @@ summary(student_performance_dataset_center_transform)
 
 # Standardize Data Transform
 
-We created a new variable MAP
 
 ```{r Standardize Data Transform}
 # BEFORE
@@ -336,18 +334,8 @@ summary(student_performance_dataset_normalize_transform)
 
 ## Box-Cox Power Transform
 
-```{r Create Box-Cox Power Transform}
-# BEFORE
-summary(student_performance_dataset)
+```{Box-Cox Power Transform}
 
-
-model_of_the_transform <- preProcess(student_performance_dataset, method = c("BoxCox"))
-print(model_of_the_transform)
-student_performance_dataset_box_cox_transform <- predict(model_of_the_transform, # nolint
-                                                         student_performance_dataset)
-
-# AFTER
-summary(student_performance_dataset_box_cox_transform)
 
 ```
 
