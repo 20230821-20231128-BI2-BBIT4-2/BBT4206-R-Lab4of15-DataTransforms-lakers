@@ -216,3 +216,15 @@ summary(student_performance_dataset_yeo_johnson_transform)
 
 # Calculate the skewness after the Yeo-Johnson transform
 sapply(student_performance_dataset_yeo_johnson_transform[, 91:94],  skewness, type = 2)
+
+# Principal Component Analysis (PCA) Linear Algebra Transform ----
+summary(student_performance_dataset)
+
+model_of_the_transform <- preProcess(student_performance_dataset, method =
+                                       c("scale", "center", "pca"))
+
+print(model_of_the_transform)
+student_performance_dataset_pca_dr <- predict(model_of_the_transform, student_performance_dataset)
+
+summary(student_performance_dataset_pca_dr)
+
