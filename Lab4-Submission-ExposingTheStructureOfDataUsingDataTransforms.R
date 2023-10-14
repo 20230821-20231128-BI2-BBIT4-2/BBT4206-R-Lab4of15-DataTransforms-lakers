@@ -156,3 +156,15 @@ student_perfomance_dataset_scale_transform <- predict(model_of_the_transform,
                                           student_performance_dataset)
 # AFTER
 summary(student_perfomance_dataset_scale_transform)
+
+# Center Data Transform ----
+# BEFORE
+summary(student_performance_dataset)
+
+model_of_the_transform <- preProcess(student_performance_dataset, method = c("center"))
+print(model_of_the_transform)
+student_performance_dataset_center_transform <- predict(model_of_the_transform, # nolint
+                                           student_performance_dataset)
+
+# AFTER
+summary(student_performance_dataset_center_transform)
