@@ -183,7 +183,7 @@ student_performance_dataset_standardize_transform <- predict(model_of_the_transf
 summary(student_performance_dataset_standardize_transform)
 
 # Normalize Data Transform ----
-### The Normalize Transform on the Boston Housing Dataset ----
+### The Normalize Transform on the Student Performance Dataset ----
 summary(student_performance_dataset)
 model_of_the_transform <- preProcess(student_performance_dataset, method = c("range"))
 print(model_of_the_transform)
