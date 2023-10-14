@@ -10,6 +10,7 @@ Business Intelligence Lab Submission Markdown
 - [Standardize Data Transform](#standardize-data-transform)
   - [Normalize Data Transform](#normalize-data-transform)
   - [Box-Cox Power Transform](#box-cox-power-transform)
+- [AFTER](#after)
 
 # Student Details
 
@@ -3618,7 +3619,16 @@ summary(student_performance_dataset_normalize_transform)
 
 ## Box-Cox Power Transform
 
-\`\`\`{Box-Cox Power Transform}
+\`\`\`{Box-Cox Power Transform} summary(student_performance_dataset)
+
+model_of_the_transform \<- preProcess(student_performance_dataset,
+method = c(“BoxCox”)) print(model_of_the_transform)
+student_performance_dataset_box_cox_transform \<-
+predict(model_of_the_transform, \# nolint student_performance_dataset)
+
+# AFTER
+
+summary(student_performance_dataset_box_cox_transform)
 
 \`\`\`
 
