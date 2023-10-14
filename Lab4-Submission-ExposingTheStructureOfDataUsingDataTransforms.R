@@ -143,55 +143,16 @@ column_numbers <- 1:ncol(student_performance_dataset)
 column_info <- data.frame(ColumnNumber = column_numbers, DataType = data_types)
 
 # Print the column information
-print(column_info)
+View(column_info)
 
 # Scale Data Transform ----
-### The Scale Basic Transform on the Boston Housing Dataset ----
+### The Scale Basic Transform on the Student Performance Dataset ----
 # BEFORE
 summary(student_performance_dataset)
-hist(student_performance_dataset[, 81], main = names(student_performance_dataset)[81])
-hist(student_performance_dataset[, 2], main = names(student_performance_dataset)[2])
-hist(student_performance_dataset[, 3], main = names(student_performance_dataset)[3])
-hist(student_performance_dataset[, 5], main = names(student_performance_dataset)[5])
-hist(student_performance_dataset[, 6], main = names(student_performance_dataset)[6])
-hist(student_performance_dataset[, 7], main = names(student_performance_dataset)[7])
-hist(student_performance_dataset[, 8], main = names(student_performance_dataset)[8])
-hist(student_performance_dataset[, 9], main = names(student_performance_dataset)[9])
-hist(student_performance_dataset[, 10], main = names(student_performance_dataset)[10])
-hist(student_performance_dataset[, 11], main = names(student_performance_dataset)[11])
-hist(student_performance_dataset[, 12], main = names(student_performance_dataset)[12])
-hist(student_performance_dataset[, 13], main = names(student_performance_dataset)[13])
-hist(student_performance_dataset[, 14], main = names(student_performance_dataset)[14])
 
 model_of_the_transform <- preProcess(student_performance_dataset, method = c("scale"))
 print(model_of_the_transform)
 student_perfomance_dataset_scale_transform <- predict(model_of_the_transform,
                                           student_performance_dataset)
 # AFTER
-summary(boston_housing_scale_transform)
-hist(boston_housing_scale_transform[, 1],
-     main = names(boston_housing_scale_transform)[1])
-hist(boston_housing_scale_transform[, 2],
-     main = names(boston_housing_scale_transform)[2])
-hist(boston_housing_scale_transform[, 3],
-     main = names(boston_housing_scale_transform)[3])
-hist(boston_housing_scale_transform[, 5],
-     main = names(boston_housing_scale_transform)[5])
-hist(boston_housing_scale_transform[, 6],
-     main = names(boston_housing_scale_transform)[6])
-hist(boston_housing_scale_transform[, 7],
-     main = names(boston_housing_scale_transform)[7])
-hist(boston_housing_scale_transform[, 8],
-     main = names(boston_housing_scale_transform)[8])
-hist(boston_housing_scale_transform[, 9],
-     main = names(boston_housing_scale_transform)[9])
-hist(boston_housing_scale_transform[, 10],
-     main = names(boston_housing_scale_transform)[10])
-hist(boston_housing_scale_transform[, 11],
-     main = names(boston_housing_scale_transform)[11])
-hist(boston_housing_scale_transform[, 12],
-     main = names(boston_housing_scale_transform)[12])
-hist(boston_housing_scale_transform[, 13],
-     main = names(boston_housing_scale_transform)[13])
-hist(boston_housing_scale_transform[, 14],
-     main = names(boston_housing_scale_transform)[14])
+summary(student_perfomance_dataset_scale_transform)
