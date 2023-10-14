@@ -228,3 +228,4 @@ student_performance_dataset_pca_dr <- predict(model_of_the_transform, student_pe
 
 summary(student_performance_dataset_pca_dr)
 
+
