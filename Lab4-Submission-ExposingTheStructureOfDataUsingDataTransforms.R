@@ -172,10 +172,36 @@ summary(student_performance_dataset_center_transform)
 # Standardize Data Transform ----
 # BEFORE
 summary(student_performance_dataset)
-sapply(student_performance_dataset[, -73], sd)
+
 
 model_of_the_transform <- preProcess(student_performance_dataset,
                                      method = c("scale", "center"))
 print(model_of_the_transform)
 student_performance_dataset_standardize_transform <- predict(model_of_the_transform, # nolint
                                                 student_performance_dataset)
+# AFTER
+summary(student_performance_dataset_standardize_transform)
+
+# Normalize Data Transform ----
+### The Normalize Transform on the Boston Housing Dataset ----
+summary(student_performance_dataset)
+model_of_the_transform <- preProcess(student_performance_dataset, method = c("range"))
+print(model_of_the_transform)
+student_performance_dataset_normalize_transform <- predict(model_of_the_transform, # nolint
+                                              student_performance_dataset)
+summary(student_performance_dataset_normalize_transform)
+
+
+# Box-Cox Power Transform ----
+# BEFORE
+summary(student_performance_dataset)
+
+
+model_of_the_transform <- preProcess(student_performance_dataset, method = c("BoxCox"))
+print(model_of_the_transform)
+student_performance_dataset_box_cox_transform <- predict(model_of_the_transform, # nolint
+                                                         student_performance_dataset)
+
+# AFTER
+summary(student_performance_dataset_box_cox_transform)
+
